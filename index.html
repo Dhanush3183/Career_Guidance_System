@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🎓 Career Guidance System</h1>
+                <p>Discover your perfect career path based on your skills and interests</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Profile Form Section -->
+            <section id="profile-section" class="section active">
+                <div class="card">
+                    <h2>📝 Create Your Profile</h2>
+                    <form id="profile-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <input type="number" id="age" name="age" min="15" max="100" required placeholder="Your age">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="education">Education Level</label>
+                                <select id="education" name="education" required>
+                                    <option value="">Select Education</option>
+                                    <option value="HighSchool">High School</option>
+                                    <option value="Bachelors">Bachelor's Degree</option>
+                                    <option value="Masters">Master's Degree</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cgpa">CGPA / GPA</label>
+                                <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" required placeholder="0.00 - 10.00">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skills">Your Skills</label>
+                            <div class="skills-container" id="skills-container">
+                                <!-- Skills will be populated dynamically -->
+                            </div>
+                            <p class="helper-text">Select all skills that apply to you</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interests">Your Interests</label>
+                            <div class="interests-container" id="interests-container">
+                                <!-- Interests will be populated dynamically -->
+                            </div>
+                            <p class="helper-text">Select all interests that apply to you</p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Get Career Recommendations</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="section">
+                <div class="card">
+                    <div class="results-header">
+                        <h2>🎯 Your Career Recommendations</h2>
+                        <button id="back-btn" class="btn btn-secondary">← Edit Profile</button>
+                    </div>
+
+                    <div id="user-summary" class="user-summary"></div>
+
+                    <div id="recommendations-container" class="recommendations-container">
+                        <!-- Recommendations will be displayed here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- All Careers Section -->
+            <section id="careers-section" class="section">
+                <div class="card">
+                    <h2>📚 All Available Careers</h2>
+                    <div class="table-container">
+                        <table id="careers-table" class="careers-table">
+                            <thead>
+                                <tr>
+                                    <th>Career Field</th>
+                                    <th>Education Required</th>
+                                    <th>Min CGPA</th>
+                                    <th>Skills Required</th>
+                                    <th>Interests</th>
+                                </tr>
+                            </thead>
+                            <tbody id="careers-tbody">
+                                <!-- Careers will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Navigation Footer -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-section="profile-section">
+                <span class="icon">👤</span>
+                <span>Profile</span>
+            </button>
+            <button class="nav-btn" data-section="results-section">
+                <span class="icon">🎯</span>
+                <span>Results</span>
+            </button>
+            <button class="nav-btn" data-section="careers-section">
+                <span class="icon">📚</span>
+                <span>All Careers</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
